@@ -1,0 +1,49 @@
+:root {
+  --bg: #f4f6fb; --card: #fff; --text: #1c2333; --muted: #667085;
+  --primary: #1d4ed8; --primary-dark: #1e40af; --border: #d9dfeb;
+  --danger: #b42318; --danger-bg: #fef3f2; --ok: #067647; --ok-bg: #ecfdf3;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; background: var(--bg); color: var(--text); }
+a { color: var(--primary); }
+h1 { margin: .4rem 0 .6rem; font-size: 1.6rem; }
+.container { max-width: 960px; margin: 0 auto; padding: 1.5rem 1rem 3rem; }
+.navbar { display: flex; justify-content: space-between; align-items: center; padding: .8rem 1.2rem; background: var(--card); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 5; }
+.navbar nav { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+.navbar nav a { text-decoration: none; color: var(--muted); font-weight: 500; }
+.navbar nav a.active { color: var(--primary); }
+.brand { font-weight: 700; font-size: 1.2rem; text-decoration: none; color: var(--primary); }
+.nav-user { color: var(--muted); font-size: .9rem; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.2rem 1.4rem; margin-bottom: 1rem; }
+.narrow { max-width: 440px; margin: 1.5rem auto; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; }
+.grid .card { margin: 0; display: flex; flex-direction: column; gap: .3rem; align-items: flex-start; }
+.service-card h3, .grid h3 { margin: 0; }
+.muted { color: var(--muted); font-size: .92rem; }
+label { display: block; margin: 1rem 0 .3rem; font-weight: 600; font-size: .92rem; }
+input, textarea { width: 100%; padding: .6rem .7rem; border: 1px solid var(--border); border-radius: 8px; font: inherit; background: #fff; }
+input:focus, textarea:focus, .slot:focus-visible, .btn:focus-visible { outline: 2px solid var(--primary); outline-offset: 1px; }
+.btn { display: inline-block; margin-top: 1rem; padding: .65rem 1.2rem; border: 0; border-radius: 8px; background: var(--primary); color: #fff; font: inherit; font-weight: 600; cursor: pointer; text-decoration: none; }
+.btn:hover { background: var(--primary-dark); }
+.btn:disabled { opacity: .55; cursor: not-allowed; }
+.btn-small { padding: .35rem .8rem; margin-top: .4rem; font-size: .88rem; }
+.btn-ghost { background: transparent; color: var(--primary); border: 1px solid var(--primary); }
+.btn-ghost:hover { background: #eef2ff; }
+.row { display: flex; gap: .8rem; flex-wrap: wrap; }
+.field-error { color: var(--danger); font-size: .85rem; margin: .3rem 0 0; }
+.alert { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: .7rem 1rem; border-radius: 8px; margin: .8rem 0; font-weight: 500; }
+.alert-error { background: var(--danger-bg); color: var(--danger); border: 1px solid #fecdca; }
+.alert-success { background: var(--ok-bg); color: var(--ok); border: 1px solid #abefc6; }
+.spinner-wrap { display: flex; align-items: center; gap: .6rem; padding: .8rem 0; color: var(--muted); }
+.spinner { width: 20px; height: 20px; border: 3px solid var(--border); border-top-color: var(--primary); border-radius: 50%; animation: spin .8s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.slot-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(84px, 1fr)); gap: .5rem; margin-top: .4rem; }
+.slot { padding: .55rem 0; border: 1px solid var(--border); border-radius: 8px; background: #fff; font: inherit; cursor: pointer; }
+.slot:hover:not(:disabled) { border-color: var(--primary); }
+.slot:disabled { background: #f2f4f7; color: #98a2b3; text-decoration: line-through; cursor: not-allowed; }
+.slot-selected { background: var(--primary); color: #fff; border-color: var(--primary); }
+.badge { padding: .15rem .6rem; border-radius: 999px; font-size: .8rem; font-weight: 600; text-transform: capitalize; }
+.badge-confirmed { background: var(--ok-bg); color: var(--ok); }
+.badge-pending { background: #fffaeb; color: #b54708; }
+.badge-cancelled { background: #f2f4f7; color: #475467; }
+@media (max-width: 520px) { .navbar { flex-direction: column; gap: .5rem; } }
